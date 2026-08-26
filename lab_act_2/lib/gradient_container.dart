@@ -15,7 +15,8 @@ class GradientContainer extends StatelessWidget {
           ]
         )
       ),
-      child: Center(child: StyledText())
+
+      child: Center(child: image.asset 'assets/dice-image.png')
         );
   }
 }
