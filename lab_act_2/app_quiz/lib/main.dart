@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  runApp(MaterialApp(home: Scaffold(body: MyApp())));
+  runApp(const MaterialApp(home: Scaffold(backgroundColor: Color.fromARGB(120, 50, 2, 123), 
+  body: Center(child: ExampleText()),
+  ),
+  ),
+  );
 
 }
- class MyApp extends StatelessWidget{
-  const MyApp({super.key});
-  @override
-  Widget build(context) {
-    child: Center(child: Column(
-      children: [Image.asset('lib/image/logo.png')],
-    ))
-  }
- }
+ 
