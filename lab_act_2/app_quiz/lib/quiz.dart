@@ -8,11 +8,11 @@ class Quiz extends StatefulWidget {
  
   @override
   State<Quiz> createState() {
-    return _quizState();
+    return QuizState();
   }
 }
  
-class _quizState extends State<Quiz> {
+class QuizState extends State<Quiz> {
   var currentScreen = 'start';
  
   void switchScreen() {
