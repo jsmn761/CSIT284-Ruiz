@@ -6,14 +6,14 @@ import 'package:app_quiz/question_screen.dart';
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
  
-  @override
+  @override 
   State<Quiz> createState() {
-    return QuizState();
+      return QuizState();
   }
 }
  
 class QuizState extends State<Quiz> {
-  var currentScreen = 'start';
+   var currentScreen = 'start';
  
   void switchScreen() {
     setState(() {
