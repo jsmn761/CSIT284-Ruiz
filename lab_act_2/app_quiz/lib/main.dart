@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'exampleText.dart';
 
 void main() {
-  runApp(const MaterialApp(home: Scaffold(backgroundColor: Color.fromARGB(120, 50, 2, 123), 
-  body: Center(child: ExampleText()),
-  ),
-  ),
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 190, 237, 170),
+        body: Center(
+          child: ExampleText(),
+        ),
+      ),
+    ),
   );
-
 }
- 
