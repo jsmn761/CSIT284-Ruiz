@@ -6,9 +6,46 @@ var kColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromARGB(255, 129, 247, 153),
 );
  
+var kDarkColorScheme = ColorScheme.fromSeed(
+  brightness: Brightness.dark,
+  seedColor: const Color.fromARGB(255, 40, 120, 70),
+);
+ 
 void main() {
   runApp(
     MaterialApp(
+      darkTheme: ThemeData.dark().copyWith(
+        useMaterial3: true,
+        colorScheme: kDarkColorScheme,
+        appBarTheme: const AppBarTheme().copyWith(
+          backgroundColor: kDarkColorScheme.primaryContainer,
+          foregroundColor: kDarkColorScheme.onPrimaryContainer,
+        ),
+        cardTheme: const CardThemeData().copyWith(
+          color: kDarkColorScheme.secondaryContainer,
+          margin: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kDarkColorScheme.primaryContainer,
+            foregroundColor: kDarkColorScheme.onPrimaryContainer,
+          ),
+        ),
+        textTheme: ThemeData.dark().textTheme.copyWith(
+          titleLarge: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: kDarkColorScheme.onSecondaryContainer,
+            fontSize: 18,
+          ),
+          bodyMedium: TextStyle(
+            color: kDarkColorScheme.onSecondaryContainer,
+            fontSize: 14,
+          ),
+        ),
+      ),
       theme: ThemeData().copyWith(
         useMaterial3: true,
         colorScheme: kColorScheme,
@@ -40,7 +77,11 @@ void main() {
           ),
         ),
       ),
+      // themeMode: ThemeMode.system, // default
+      themeMode: ThemeMode.system,
       home: const Expenses(),
     ),
   );
 }
+ 
+ 
