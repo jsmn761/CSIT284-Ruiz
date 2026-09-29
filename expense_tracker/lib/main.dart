@@ -2,10 +2,23 @@ import 'package:flutter/material.dart';
  
 import 'package:expense_tracker/widgets/expenses.dart';
  
+var kColorScheme = ColorScheme.fromSeed(
+  seedColor: const Color.fromARGB(255, 129, 247, 153),
+);
+ 
 void main() {
   runApp(
-    MaterialApp(theme: ThemeData(useMaterial3: true),
-    home: const Expenses(),
+    MaterialApp(
+      theme: ThemeData().copyWith(
+        useMaterial3: true,
+        colorScheme: kColorScheme,
+        appBarTheme: const AppBarTheme().copyWith(
+          backgroundColor: kColorScheme.onPrimaryContainer,
+          foregroundColor: kColorScheme.primaryContainer,
+        ),
+      ),
+      home: const Expenses(),
     ),
   );
 }
+ 
