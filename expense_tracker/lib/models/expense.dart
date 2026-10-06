@@ -58,4 +58,3 @@ class ExpenseBucket {
     return sum;
   }
 }
- 
