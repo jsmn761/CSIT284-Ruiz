@@ -44,7 +44,7 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
       body: Column(
           children: [
             SwitchListTile(
-              value: activefilter(Filter.glutenFree)!,
+              value: activefilter[Filter.glutenFree]!,
               onChanged: (isChecked) {
                 ref.read(filtersProvider.notifier).setFilter(Filter.glutenFree, isChecked);
               },
@@ -64,7 +64,7 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
               contentPadding: const EdgeInsets.only(left: 34, right: 22),
             ),
             SwitchListTile(
-              value: activefilter(Filter.lactoseFree)!,
+              value: activefilter[Filter.lactoseFree]!,
               onChanged: (isChecked) {
                 ref.read(filtersProvider.notifier).setFilter(Filter.lactoseFree, isChecked);
               },
@@ -84,7 +84,7 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
               contentPadding: const EdgeInsets.only(left: 34, right: 22),
             ),
             SwitchListTile(
-              value: activefilter(Filter.vegetarian)!,
+              value: activefilter[Filter.vegetarian]!,
               onChanged: (isChecked) {
                 ref.read(filtersProvider.notifier).setFilter(Filter.vegetarian, isChecked);
               },
@@ -104,7 +104,7 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
               contentPadding: const EdgeInsets.only(left: 34, right: 22),
             ),
             SwitchListTile(
-              value: activefilter(Filter.vegan)!,
+              value: activefilter[Filter.vegan]!,
               onChanged: (isChecked) {
                 ref.read(filtersProvider.notifier).setFilter(Filter.vegan, isChecked);
               },
