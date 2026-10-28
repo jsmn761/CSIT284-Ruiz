@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:meals_vo2/models/meal.dart';
 import 'package:meals_vo2/providers/favorites_provider.dart';
+import 'package:meals_vo2/providers/filters_provider.dart';
 import 'package:meals_vo2/providers/meals_provider.dart';
 import 'package:meals_vo2/screens/categories.dart';
 import 'package:meals_vo2/screens/filters.dart';
@@ -41,7 +42,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
     );
   }
 
-  void _toggleMealFavoriteStatus(Meal meal) {
+  void toggleMealFavoriteStatus(Meal meal) {
     final isExisting = _favoriteMeals.contains(meal);
 
     if (isExisting) {
@@ -83,21 +84,9 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     final meals = ref.watch(mealsProvider);
+    final activefilters = ref.watch(filtersProvider);
     final availableMeals = meals.where((meal) {
-      if (_selectedFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
-        return false;
-      }
-      if (_selectedFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
-        return false;
-      }
-      if (_selectedFilters[Filter.vegetarian]! && !meal.isVegetarian) {
-        return false;
-      }
-      if (_selectedFilters[Filter.vegan]! && !meal.isVegan) {
-        return false;
-      }
-      return true;
-    }).toList();
+  
 
     Widget activePage = CategoriesScreen(
       
